@@ -1,5 +1,7 @@
 Run below command to emulate i.e. serve in localhost with default port:
 python -m SimpleHttpServer
+python -m http.server 8000
+
 
 This will serve in default port in localhost:
 http://localhost:8000/
