@@ -1,0 +1,42 @@
+<!-- <div> 
+    <h2>{{title}}</h2> 
+    <button ng-click='someClickTest()'>Click Me from blog-test.html</button>
+</div>
+
+{{items}} -->
+
+<h1>Blog List</h1>
+<ul ng-if='items.length >0'>
+    <li ng-repeat='item in items'> 
+        
+        <!--use confirm-click as directive if template property define in directive.js file-->
+        <!-- <confirm-click></confirm-click> -->
+        
+        <!-- <a ng-href="/blog/{{item.id}}" confirm-click='Are you sure?'> {{item.title}}</a> -->
+        
+        <!-- Correct syntext: -->
+        <!-- <a ng-href="/blog/{{item.id}}" confirm-click> {{item.title}}</a> -->
+
+        <!-- Display each post using directive -->
+        <confirm-click-old message="Are you positive?" eq="10 + 1000" post="item"></confirm-click-old>
+        |
+        <!-- Display using confirm-click directive with link-->
+        <a ng-href="/blog/{{item.id}}" 
+            confirm-click="Are you ready?" 
+            confirmed-click="/blog/{{item.id}}" 
+            post="item">confirm-click: {{item.title}}</a>
+
+        | 
+        <!-- work with ng-click -->
+        <a href="#" ng-click="goToItem(item)">ng-click: {{item.title}}</a>
+        | 
+        <!-- work with confirm-click directive with event propagation properties set -->
+        <a ng-href="#" 
+            confirm-click="Are you ready?" 
+            confirmed-click="goToItem(item)">confirm-click with function: {{item.title}}</a>
+
+
+    </li>
+</ul>
+
+<span ng-if='items.length == 0'> Posts coming soon</span>

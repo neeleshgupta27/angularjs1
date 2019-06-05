@@ -1,0 +1,9 @@
+[
+    {"id":1, "title":"title1", "description": "title 1 description",
+        "comments": [
+            {"id":1, "text":"Nice book"},
+            {"id":2, "text":"Another comment"}
+        ]},
+    {"id":2, "title":"title2", "description": "title 2 description"},
+    {"id":3, "title":"title3", "description": "title 3 description"}
+]
