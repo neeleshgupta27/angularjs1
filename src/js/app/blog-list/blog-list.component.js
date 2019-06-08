@@ -42,6 +42,18 @@ angular.module('blogList')
         .component('blogList3', {
             templateUrl: '/js/app/blog-list/blog-list.html',
             controller: function(Post, $routeParams, $scope, $rootScope, $location){
+
+                $scope.order = "title"; // for pagination
+
+                console.log($location.search()); // uses in typeahead
+                var q = $location.search().q;
+                console.log(q);
+                if(q){
+                    $scope.query = q;
+                    $scope.searchQuery = true;
+                }
+
+
                 //console.log("hello from blog-list3");
                 //console.log("$routeParams:");
                 //console.log($routeParams.id);

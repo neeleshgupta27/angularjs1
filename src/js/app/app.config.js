@@ -14,6 +14,10 @@ angular.module('tryModule')
                 .when("/blog/:id", {
                     template: "<blog-detail></blog-detail>"
                 })
+                .when("/blog", {
+                    template: "<blog-list3></blog-list3>",
+                    //redirectTo: "/"
+                })
                 .when("/blog/:id/:abc", {
                     template: "<blog-list3></blog-list3>"
                 })

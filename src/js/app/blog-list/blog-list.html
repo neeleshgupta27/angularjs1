@@ -39,4 +39,52 @@
     </li>
 </ul>
 
+<!-- <ul>
+    <li dir-paginate="item in items | itemsPerPage: 2">
+        <a ng-href="#" class="btn btn-primary"
+            confirm-click="Are you ready?" 
+            confirmed-click="goToItem(item)">confirm-click with function: {{item.title}}</a>
+
+    </li>
+</ul> -->
+<hr>
+<h5> Pagination example:</h5>
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="row">
+            <div class="col-sm-6">
+                <input type="text" ng-model="query" class="form-control" placeholder="Filter">
+            </div>
+            <div class="col-sm-6">
+                <select class="form-control" ng-model="order">
+                            <option value="title">A-Z</option>
+                            <option value="-title">Z-A</option>
+                </select>        
+            </div>
+        </div>
+        
+        
+        <dir-pagination-controls ng-hide="query.length>0" pagination-id="main-content"></dir-pagination-controls>
+    </div>
+</div>
+
+<!-- orderBy: '-title' -->
+<div class="row" dir-paginate="item in items| orderBy: order | filter: query | itemsPerPage: 2 as postItems" pagination-id="main-content">
+    <div class="thumbnail">
+        <div class="caption">
+            <p>
+                <a ng-href="#" class="btn btn-primary"
+                    confirm-click="Are you ready?" 
+                    confirmed-click="goToItem(item)"> {{item.title}}</a>
+        
+            </p>
+        </div>
+    </div>
+</div>
+<span ng-if="postItems.length ==0">No items found</span>
+<div class="col-sm-6 col-sm-offset-3">
+    <dir-pagination-controls ng-hide="query.length>0" pagination-id="main-content"></dir-pagination-controls>
+</div>
+
+
 <span ng-if='items.length == 0'> Posts coming soon</span>

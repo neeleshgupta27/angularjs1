@@ -11,3 +11,10 @@ http://localhost:8000/
 copy bootstrap css from below location:
 https://getbootstrap.com/docs/4.3/getting-started/introduction/
 
+For pagination:
+https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination
+https://raw.githubusercontent.com/michaelbromley/angularUtils/master/src/directives/pagination/dirPagination.js
+
+https://getbootstrap.com/docs/4.0/components/navbar/
+
+https://angular-ui.github.io/bootstrap/
